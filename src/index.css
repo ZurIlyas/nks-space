@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@import "./base.css";
+
+/* первый экран: чёрная дыра на весь экран, текст поверх */
+.bh { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: center; max-width: 1120px; margin: 0 auto; padding: 0 var(--pad) 40px; pointer-events: none; }
+.bh a { pointer-events: auto; }
+.bh-shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(13, 13, 13, .82) 0%, rgba(13, 13, 13, .35) 42%, transparent 62%), linear-gradient(0deg, var(--ink) 0%, transparent 22%); }
+.bh .title { margin-top: 18px; align-self: flex-start; }
+.bh .title h1 { font-size: clamp(74px, 15vw, 176px); }
+.bh p { max-width: 400px; margin: 54px 0 0; color: #d8d1c4; font-size: 14px; }
+.bh-hint { position: absolute; right: var(--pad); bottom: 30px; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: rgba(244, 239, 230, .5); }
+.ticker { margin-top: 0; position: relative; z-index: 2; }
+.menu { padding-top: 90px; }
+.place-head { margin-top: 70px; }
+.shot { margin: 0; }
+
+@media (max-width: 860px) {
+  .bh { justify-content: flex-end; padding-bottom: 64px; }
+  .bh-shade { background: linear-gradient(0deg, var(--ink) 0%, rgba(13, 13, 13, .7) 34%, transparent 62%); }
+  .bh p { margin-top: 46px; }
+  .bh-hint { left: var(--pad); right: auto; bottom: 22px; }
+}
